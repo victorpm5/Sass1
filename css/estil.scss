@@ -1,0 +1,56 @@
+@mixin border-radius($radius) { 
+  -webkit-border-radius: $radius; 
+     -moz-border-radius: $radius; 
+      -ms-border-radius: $radius; 
+          border-radius: $radius; 
+}
+
+@mixin border-color($color){
+ border-color: $color;
+ border-style: solid;
+}
+
+.message { 
+ color: #333;
+ margin-left: 30%;
+ margin-right: 30%;
+} 
+ 
+.success { 
+ @extend .message; 
+ @include border-radius(2px);
+ @include border-color(green);
+ background-color: rgba(0,200,0,0.4);
+
+} 
+
+.info {
+ @extend .message; 
+ @include border-radius(5px);
+ @include border-color(blue);
+ background-color: rgba(0,0,200,0.4);
+} 
+
+.danger {
+ @extend .message; 
+ @include border-radius(7px);
+ @include border-color(red);
+ background-color: rgba(200,0,0,0.4);
+}
+
+.default {
+ @extend .message; 
+ @include border-radius(10px);
+ @include border-color(yellow);
+ background-color: yellow;
+} 
+
+.foot {
+@include border-radius(10px);
+background-color: rgba(0,0,200,0.4);
+ 
+ .text {
+   margin-left: 2%;
+ }
+ 
+}
